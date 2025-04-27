@@ -9,5 +9,5 @@ public class CopsbootApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CopsbootApplication.class, args);
 	}
-
+	
 }
