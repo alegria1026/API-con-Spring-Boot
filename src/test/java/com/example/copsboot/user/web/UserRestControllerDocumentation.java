@@ -30,14 +30,16 @@ public class UserRestControllerDocumentation {
     @MockBean
     private UserService service;
 
-
+    //tag::not-logged-in[]
     @Test
     public void ownUserDetailsWhenNotLoggedInExample() throws Exception {
         mockMvc.perform(get("/api/users/me"))
                 .andExpect(status().isUnauthorized())
                 .andDo(document("own-details-unauthorized"));
     }
+    //end::not-logged-in[]
 
+    //tag::officer-details[]
     @Test
     public void authenticatedOfficerDetailsExample() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/users/me")
@@ -50,8 +52,10 @@ public class UserRestControllerDocumentation {
                                 subsectionWithPath("claims").description("The claims from the JWT token")
                         )));
     }
+    //end::officer-details[]
 
 
+    //tag::create-officer[]
     @Test
     public void createOfficerExample() throws Exception {
         UserId userId = new UserId(UUID.randomUUID());
@@ -71,11 +75,11 @@ public class UserRestControllerDocumentation {
                                 """))
                 .andExpect(status().isCreated())
                 .andDo(document("create-user",
-                        requestFields( 
+                        requestFields( // <.>
                                 fieldWithPath("mobileToken")
                                         .description("The unique mobile token of the device (for push notifications).")
                         ),
-                        responseFields( 
+                        responseFields( // <.>
                                 fieldWithPath("userId")
                                         .description("The unique id of the user."),
                                 fieldWithPath("email")
@@ -86,4 +90,5 @@ public class UserRestControllerDocumentation {
                                         .description("The unique mobile token of the device (for push notifications).")
                         )));
     }
+    //end::create-officer[]
 }

@@ -13,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+//tag::class[]
 @Retention(RetentionPolicy.RUNTIME)
 @CopsbootControllerTest
 @ExtendWith(RestDocumentationExtension.class)
@@ -20,9 +21,10 @@ import java.lang.annotation.RetentionPolicy;
 @ContextConfiguration(classes = CopsbootControllerDocumentationTestConfiguration.class)
 public @interface CopsbootControllerDocumentationTest {
 
-    @AliasFor(annotation = WebMvcTest.class, attribute = "value") 
+    @AliasFor(annotation = WebMvcTest.class, attribute = "value") //<5>
     Class<?>[] value() default {};
 
-    @AliasFor(annotation = WebMvcTest.class, attribute = "controllers") 
+    @AliasFor(annotation = WebMvcTest.class, attribute = "controllers") //<6>
     Class<?>[] controllers() default {};
 }
+//end::class[]

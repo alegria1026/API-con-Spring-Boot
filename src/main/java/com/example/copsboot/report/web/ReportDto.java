@@ -19,3 +19,4 @@ public record ReportDto(ReportId id,
                 report.getDescription());
     }
 }
+//end::class[]

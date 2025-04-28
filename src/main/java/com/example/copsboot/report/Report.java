@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 
 import java.time.Instant;
 
+//tag::class[]
 @Entity
 public class Report extends AbstractEntity<ReportId> {
 
@@ -37,3 +38,4 @@ public class Report extends AbstractEntity<ReportId> {
         return description;
     }
 }
+//end::class[]

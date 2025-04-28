@@ -9,13 +9,14 @@ import jakarta.persistence.Table;
 public class User extends AbstractEntity<UserId> {
 
     private String email;
-    private AuthServerId authServerId; 
-    private String mobileToken; 
+    private AuthServerId authServerId; //<.>
+    private String mobileToken; //<.>
+
     protected User() {
 
     }
 
-    public User(UserId id, String email, AuthServerId authServerId, String mobileToken) { 
+    public User(UserId id, String email, AuthServerId authServerId, String mobileToken) { //<.>
         super(id);
         this.email = email;
         this.authServerId = authServerId;
@@ -26,7 +27,7 @@ public class User extends AbstractEntity<UserId> {
         return email;
     }
 
-    public AuthServerId getAuthServerId() { 
+    public AuthServerId getAuthServerId() { //<.>
         return authServerId;
     }
 

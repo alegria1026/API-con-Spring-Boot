@@ -9,15 +9,21 @@ import org.springframework.core.annotation.AliasFor;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-@Retention(RetentionPolicy.RUNTIME) 
-@WebMvcTest 
-@AutoConfigureAddonsWebmvcResourceServerSecurity 
-@Import(WebSecurityConfiguration.class) 
+/**
+ * Custom annotation for all {@link org.springframework.stereotype.Controller Controller} tests on the project. By using
+ * this single annotation, everything is configured properly to test a controller:
+ */
+//tag::class[]
+@Retention(RetentionPolicy.RUNTIME) //<.>
+@WebMvcTest //<.>
+@AutoConfigureAddonsWebmvcResourceServerSecurity //<.>
+@Import(WebSecurityConfiguration.class) //<.>
 public @interface CopsbootControllerTest {
 
-    @AliasFor(annotation = WebMvcTest.class, attribute = "value") 
+    @AliasFor(annotation = WebMvcTest.class, attribute = "value") //<5>
     Class<?>[] value() default {};
 
-    @AliasFor(annotation = WebMvcTest.class, attribute = "controllers") 
+    @AliasFor(annotation = WebMvcTest.class, attribute = "controllers") //<6>
     Class<?>[] controllers() default {};
 }
+//end::class[]
