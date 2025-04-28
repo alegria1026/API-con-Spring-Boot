@@ -9,7 +9,6 @@ import org.springframework.core.annotation.AliasFor;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-
 @Retention(RetentionPolicy.RUNTIME) 
 @WebMvcTest 
 @AutoConfigureAddonsWebmvcResourceServerSecurity 

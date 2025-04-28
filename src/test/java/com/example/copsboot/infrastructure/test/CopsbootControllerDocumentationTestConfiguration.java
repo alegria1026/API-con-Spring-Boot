@@ -18,4 +18,4 @@ class CopsbootControllerDocumentationTestConfiguration {
                                     .removeMatching("Pragma")
                                     .removeMatching("Expires"));
         }
-    }
+}

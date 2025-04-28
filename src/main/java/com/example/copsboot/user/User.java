@@ -11,7 +11,6 @@ public class User extends AbstractEntity<UserId> {
     private String email;
     private AuthServerId authServerId; 
     private String mobileToken; 
-
     protected User() {
 
     }
