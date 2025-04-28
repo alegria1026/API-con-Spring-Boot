@@ -1,4 +1,5 @@
 package com.example.copsboot.user;
+
 import com.example.orm.jpa.UniqueIdGenerator;
 
 import java.util.UUID;

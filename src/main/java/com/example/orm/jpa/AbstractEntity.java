@@ -9,7 +9,6 @@ import java.util.Objects;
 import static com.google.common.base.MoreObjects.toStringHelper;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-
 @MappedSuperclass
 public abstract class AbstractEntity<T extends EntityId> implements Entity<T> {
 
